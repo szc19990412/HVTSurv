@@ -1,0 +1,47 @@
+General:
+    comment: TransMIL
+    seed: 2021
+    fp16: True
+    amp_level: O2
+    precision: 16 # 
+    multi_gpu_mode: dp
+    gpus: [0]
+    epochs: &epoch 200 #
+    grad_acc: 2
+    frozen_bn: False
+    patience: 8
+    server: test #train #test
+    log_path: /data112/shaozc/HVTSurv/logs/
+
+Data:
+    dataset_name: tcga_data
+    data_shuffle: False
+    data_dir: /data112/shaozc/TCGA_feature/BLCA/FEATURES_DIRECTORY/tcga_blca_resnet_features/pt_files/
+    label_dir: splits/4foldcv/tcga_blca/
+    fold: 1
+    nfold: 4
+
+    train_dataloader:
+        batch_size: 1 
+        num_workers: 8
+
+    test_dataloader:
+        batch_size: 1
+        num_workers: 8
+
+Model:
+    name: TransMIL
+    n_classes: 4
+
+
+Optimizer:
+    opt: lookahead_radam
+    lr: 0.0002
+    opt_eps: null #
+    opt_betas: null
+    momentum: null #0.9
+    weight_decay: 0.00001
+
+Loss:
+    alpha_surv: 0.0 #How much to weigh uncensored patients
+
