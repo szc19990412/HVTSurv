@@ -99,3 +99,16 @@ python metrics.py --config='BRCA/HVTSurv.yaml'
 python curves.py --config='BRCA/HVTSurv.yaml'
 ```
 
+
+If this paper is helpful to you, you are also welcome to cite it. Thank you.
+```
+@inproceedings{shao2023hvtsurv,
+  title={HVTSurv: Hierarchical Vision Transformer for Patient-Level Survival Prediction from Whole Slide Image},
+  author={Shao, Zhuchen and Chen, Yang and Bian, Hao and Zhang, Jian and Liu, Guojun and Zhang, Yongbing},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={37},
+  number={2},
+  pages={2209--2217},
+  year={2023}
+}
+```
